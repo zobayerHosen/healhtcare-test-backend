@@ -1,4 +1,5 @@
 import express, { type Application, type Request, type Response } from "express";
+import { IndexRoutes } from "./app/routes";
 import { prisma } from "./app/lib/prisma";
 
 export const app: Application = express();
@@ -9,18 +10,21 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Basic route
+
+app.use("/api/v1", IndexRoutes)
+
+
+
 app.get('/', async (req: Request, res: Response) => {
 
-    const speciality = await prisma.speciality.create({
+    const specialty = await prisma.speciality.create({
         data: {
-            title: "Dentist"
+            title: 'Cardiology'
         }
     })
-
     res.status(201).json({
         success: true,
-        message: "API is working...",
-        data: speciality
+        message: 'API is working',
+        data: specialty
     })
 });
