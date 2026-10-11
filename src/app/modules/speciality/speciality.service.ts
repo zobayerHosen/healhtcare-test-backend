@@ -22,8 +22,20 @@ const deletedSpeciality = async (id: string): Promise<Speciality> => {
     return deletedData;
 };
 
+
+const updateSpeciality = async (id: string, payload: Speciality): Promise<Speciality> => {
+    const updateData = await prisma.speciality.update({
+        where: {
+            id
+        },
+        data: payload
+    });
+    return updateData;
+};
+
 export const SpecialityService = {
     createSpeciality,
     getAllSpeciality,
-    deletedSpeciality
+    deletedSpeciality,
+    updateSpeciality
 }
