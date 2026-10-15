@@ -12,35 +12,37 @@ export const auth = betterAuth({
         enabled: true,
     },
 
-    additionalFields: {
-        role: {
-            type: "string",
-            required: true,
-            defaultValue: Role.ADMIN,
-        },
+    user: {
+        additionalFields: {
+            role: {
+                type: "string",
+                required: true,
+                defaultValue: Role.PATIENT,
+            },
 
-        status: {
-            type: "string",
-            required: true,
-            defaultValue: UserStatus.ACTIVE,
-        },
+            status: {
+                type: "string",
+                required: true,
+                defaultValue: UserStatus.ACTIVE,
+            },
 
-        needPasswordChange: {
-            type: "boolean",
-            required: true,
-            defaultValue: false,
-        },
+            needPasswordChange: {
+                type: "boolean",
+                required: true,
+                defaultValue: false,
+            },
 
-        isDeleted: {
-            type: "boolean",
-            required: true,
-            defaultValue: false,
-        },
+            isDeleted: {
+                type: "boolean",
+                required: true,
+                defaultValue: false,
+            },
 
-        deletedAt: {
-            type: "date",
-            required: false,
-            defaultValue: null,
-        },
+            deletedAt: {
+                type: "date",
+                required: false,
+                defaultValue: null,
+            },
+        }
     }
 });
