@@ -7,10 +7,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/server.js",
-    "build": "tsc -p .",
+    "start": "node api.js && node dist/server.js",
+    "build": "node api.js && tsc -p .",
     "lint": "eslint ./src/**/*",
-    "dev": "tsx watch src/server.ts",
+    "dev": "node api.js && tsx watch src/server.ts",
     "migrate": "prisma migrate dev",
     "generate": "prisma generate",
     "studio": "prisma studio",
