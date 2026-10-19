@@ -16,6 +16,7 @@ model User {
 
     // relations
     patient Patient? // 1-1 relationship
+    doctor  Doctor? // 1-1 relationship
 
     @@unique([email])
     @@map("user")
