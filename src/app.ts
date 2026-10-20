@@ -34,4 +34,6 @@ app.get('/', async (req: Request, res: Response) => {
 
 // global error handler
 app.use(globalErrorHandler);
+
+// global not found handler
 app.use(notFound);
